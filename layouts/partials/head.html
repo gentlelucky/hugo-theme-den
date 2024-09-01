@@ -40,6 +40,6 @@
 <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
 {{ end }}
 
-{{- if not hugo.IsServer -}}
+{{- if and .Site.GoogleAnalytics (not .Site.IsServer) -}}
   {{ template "_internal/google_analytics.html" . }}
 {{- end -}}
